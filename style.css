@@ -1,0 +1,142 @@
+nav, .nav-link{
+    background-color:#2B5873;
+    font-family: Cabin;
+}
+.nav-link,
+.navbar-brand {
+  color: #CEAC46;
+  position: relative;
+  text-decoration: none;
+}
+.nav-link::after {
+  /* Animated underline for Nav links */
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0%;
+  height: 2px;
+  transform: translateX(-50%);
+  transition:
+    width,
+    0.3s ease;
+  background-color: #97C1DD;
+}
+.nav-link:hover::after, .nav-link:hover {
+  /* Underline to expand for Nav link + Nav text on Hover*/
+  width: 100%;
+  color: #948AAD;
+  font-weight: bolder;
+}
+body{
+    background-color: #97C1DD;
+    font-family: Boldonse;
+}
+p{
+    font-family: Cabin;
+    font-weight: 450;
+    font-size: larger;
+}
+h4, h3{
+    color: #453265;
+    padding-bottom: 15px;
+}
+h4{  /* FIX */
+    padding: 0;
+    text-shadow: 3px 5px 3px #8298A9;
+}
+#ourMission{
+    color: #131A23;
+    background-color: #948AAD;
+    box-shadow: 3px 10px 3px #8298A9;
+    padding: 40px;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+#eventList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.cardEvent{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 305px;
+    height: 500px;
+    margin: 40px 20px;
+    border-radius: 25px;
+    border: 12px solid transparent;
+    background-image:
+    linear-gradient(#fff, #fff),
+    linear-gradient(to bottom, #a9aaab, #dbddde, rgba(118, 119, 120, 0.7));
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+.imageType img{
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+    border-radius: 20px;
+    background-color: #DFB869;
+}
+.top-Card, .bottom-Card{
+    background-color: #ACA0C9;
+    padding: 10px;
+}
+.top-Card{
+    min-height: 50px;
+    display: flex;
+    justify-content:space-between;
+    align-content: space-evenly;
+}
+.middlePhoto{
+    width: 10px;
+    height: 150px;
+}
+.eventDate{
+    padding: 10px;
+    min-height: 50px;
+    background-color: #4B386F;
+    color: #CEAC46;
+    font-size: 12px;
+}
+.bottom-Card{ /* FIX height: 250px; */
+    padding: 10px;
+    flex-grow: 1; /* Allows to expand */
+}
+.contact, .eventDetails, .location{
+    padding-bottom: 10px;
+}
+.location{
+    font-size: 14px;
+}
+.contact{
+    font-size: 12px;
+}
+.eventDetails{
+    font-size: 14px;
+    overflow: hidden;
+    
+}
+.prizeCard, .feeCard{
+    border-radius: 50px;
+    background-color: #AECBDE;
+    color: #1e5d87;
+    width: 100px;
+    height: 50px;
+    padding: 3px;
+    font-size: 11px;
+}
+.pillSection{
+    margin-top: auto;
+    display: flex;
+    justify-content:space-between;
+    align-content: space-evenly;
+}
+footer{
+    max-width: 100%;
+    background-color: #131A23;
+}

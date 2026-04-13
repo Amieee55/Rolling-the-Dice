@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,19 +11,102 @@
     <meta property="og:image" content="#">
     <meta property="og:url" content="https://rolling-the-dice.com">
 
+    <!--Google Fonts Links Embeded-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Cabin:ital,wght@0,400..700;1,400..700&family=DynaPuff:wght@400..700&family=Indie+Flower&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">   
     <!--Bootstrap Links Embeded-->
     <link
         href="https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Funnel+Display:wght@300..800&family=Jost:ital,wght@0,100..900;1,100..900&family=Yuji+Syuku&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="icon" href="#">
+    <link rel="icon" href="Logo-Dice-No-Back.png">
     <link rel="stylesheet" href="style.css">
     <title>Rolling the Dice</title>
 </head>
 
 <body>
 
+  <nav id="navbar-example2" class="navbar px-3"> <!--Navbar-->
+  <a class="navbar-brand" href="#"><img src="Logo-Dice-No-Back.png" width="50px"></a>
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link" href="#heroImage">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#ourMission">Our Mission</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#scrollspyHeading3">Upcoming Events</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#eventList">Event List</a>
+    </li>
+  </ul>
+</nav>
+
+<header class="hero-section d-flex align-items-center" id="heroImage"> <!--Hero-->
+  <div class="container-fluid text-center w-100 p-0">
+    <img src="Hero_image-04.jpg" class="img-fluid" alt="#">
+  </div>
+</header>
+
+<div class="container-fluid container" id="ourMission"> <!--Our Mission Section-->
+  <h3>Our Mission</h3>
+  <p>Our mission is to ensure no player has to game alone. We connect local trading card enthusiasts with the tournaments and shops that bring community to life, making it easier than ever for players to discover new events, track their favorites, and join the experinces - whether they're competing for the top spot or just coming to watch.</p>
+</div>
+
+<div class="container-fluid container"> <!--Upcoming Event Cards-->
+  <h4 id="scrollspyHeading3">Upcoming Events</h4>
+  <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+  </div>
+</div>
+</div>
+
+<!--Event List Cards with different id where JavaScript pushes the Airtable data-->
+<div class="container-fluid container" id="eventList"> 
+  <h4>Event List</h4>
+  <!-- This goes in JavaScript!!!
+  <div class="cardEvent card d-flex">
+    <div class="top-Card"> 
+        <div class="eventName d-flex flex-row">
+            <p>Name</p>
+        </div>
+        <div class="imageType">
+        <img src="#" alt="#">
+        </div>
+    </div>
+    <div class="middlePhoto">
+        <img class="text-center" src="#" alt="#" width="300px">
+    </div>
+    <div class="eventDate">
+        <p>Date + Time</p>
+    </div>
+    <div class="bottom-Card">
+        <p class="location">Location</p>
+        <p class="eventDetails">Info/Details</p>
+        <p class="contact">Contact</p>
+        <div class="pillSection">
+            <div class="prizeCard text-center">
+                <p>Prize</p>
+            </div>
+            <div class="feeCard text-center">
+                <p>FEE</p>
+            </div>
+        </div>
+    </div>
+  </div> -->
+</div> 
+
+<footer>
+    <div>
+        <img src="Dice-Footer.png" width="150px" alt="#">
+    </div>
+</footer>
     <!--JavaScript Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -32,6 +114,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
+
+    <script src="script.js" defer></script>
 
 </body>
 
