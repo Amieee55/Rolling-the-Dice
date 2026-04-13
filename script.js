@@ -9,8 +9,7 @@ async function getAllRecords(){ //function for Event List
     const options = {
         method: "GET",
         headers: {
-            Authorization: `Bearer patUZbjIH5L5eCO0M.130ae71fbca167b026a66edc8d119fa82f2fa234c07d283c64511a9387d194eb
-`,
+            Authorization: `Bearer API_KEY`,
         },
     };
     const response = await fetch(
