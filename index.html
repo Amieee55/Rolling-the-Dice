@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Rolling the Dice | Home">
+    <meta property="og:title" content="Rolling the Dice | Bay Area">
     <meta property="og:description"
         content="Final WEB App project, about local trading game game events within the Bay Area">
     <meta property="og:site-name" content="Rolling the Dice">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="#">
+    <meta property="og:image" content="https://rolling-the-dice.com/Logo-Dice-No-Back.png">
     <meta property="og:url" content="https://rolling-the-dice.com">
 
     <!--Google Fonts Links Embeded-->
@@ -27,28 +27,44 @@
 </head>
 
 <body>
+<nav class="navbar navbar-expand-lg"> <!--Navbar-->
+  <div class="position-absolute main-logo">
+  <a class="mx-auto" href="index.html">
+    <img src="Logo-Dice-No-Back.png" class="rounded-circle" height="120" width="120">
+  </a>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  </div>
 
-  <nav id="navbar-example2" class="navbar px-3"> <!--Navbar-->
-  <a class="navbar-brand" href="#"><img src="Logo-Dice-No-Back.png" width="50px"></a>
-  <ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link" href="#heroImage">Home</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#ourMission">Our Mission</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#scrollspyHeading3">Upcoming Events</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#eventList">Event List</a>
-    </li>
-  </ul>
+  <div class="container-fluid navbar-collapse collapse w-100" id="navContent">
+    <div class="navbar-nav w-100 order-1 order-lg-0 justify-content-end">
+      <ul class="navbar-nav ml-auto text-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#heroImage">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#ourMission">Our Mission</a>
+      </li>
+      </ul>
+    </div>
+    <div class="navbar-nav w-100 order-2 justify-content-start">
+      <ul class="navbar-nav mr-auto text-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#upcomingEvents">Upcoming Events</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#eventList">Event List</a>
+      </li>
+    </ul>
+    </div>
+  </div>
 </nav>
+ 
 
 <header class="hero-section d-flex align-items-center" id="heroImage"> <!--Hero-->
   <div class="container-fluid text-center w-100 p-0">
-    <img src="Hero_image-04.jpg" class="img-fluid" alt="#">
+    <img src="Hero_image-04.jpg" class="img-fluid" alt="Photo image with different types of trading card games in the background that little out of view, center view dices of blue, purple, and a clear glitter dice in the center of image.">
   </div>
 </header>
 
@@ -58,18 +74,18 @@
 </div>
 
 <div class="container-fluid container"> <!--Upcoming Event Cards-->
-  <h4 id="scrollspyHeading3">Upcoming Events</h4>
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+  <h4 id="upcomingEvents">Upcoming Events</h4>
+  <div id="listView" class="d-flex flex-wrap justify-content-center">
+
   </div>
-</div>
+
 </div>
 
 <!--Event List Cards with different id where JavaScript pushes the Airtable data-->
-<div class="container-fluid container" id="eventList"> 
-  <h4>Event List</h4>
+<hr>
+<div class="container-fluid container">
+    <h4>Event List</h4>
+<div class="listBackground container-fluid container" class="d-flex" id="eventList"> 
   <!-- This goes in JavaScript!!!
   <div class="cardEvent card d-flex">
     <div class="top-Card"> 
@@ -99,14 +115,36 @@
             </div>
         </div>
     </div>
-  </div> -->
-</div> 
-
+  </div>
+</div> -->
+</div>
+</div>
 <footer>
-    <div>
-        <img src="Dice-Footer.png" width="150px" alt="#">
-    </div>
+   <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+            <div class="col-md-2 col-lg-2 col-exl-2 mx-auto mb-2">
+                <h5>Explore</h5>
+                <ul>
+                    <li class="exploreList"><a class="exploreLink" href="#heroImage">Home</a></li>
+                    <li class="exploreList"><a class="exploreLink" href="#ourMission">Our Mission</a></li>
+                    <li class="exploreList"><a class="exploreLink" href="#upcomingEvents">Upcoming Events</a></li>
+                    <li class="exploreList"><a class="activeExplore  exploreLink" href="#eventList">Event List</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 col-lg-2 col-exl-2 mx-auto mb-2">
+                <img src="Footer-Dice.png" width="100px" alt="Different dice in colors blue, yellow and purple">
+                <p id="copyright" class="text-center">&copy; 2026 Amber Yaxcal. All rights reserved.</p>
+            </div>
 </footer>
+
+<div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content" id="modalBodyContent" style="background:transparent; border:none;">
+      <!--PopUp Screen for the Detail View-->
+    </div>
+  </div>
+</div>
+
     <!--JavaScript Bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
