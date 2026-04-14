@@ -7,7 +7,7 @@ async function getAllRecords(){ //function for Event List
     const options = {
         method: "GET",
         headers: {
-            Authorization: `Bearer ${secrets.API_KEY}`, //${secrets.API_KEY}
+            Authorization: `Bearer patUZbjIH5L5eCO0M.db444e26deda63327d01fc6935a4c9684143302e300bf49447dbf8f9a5cc395d`, //${secrets.API_KEY}
         },
     };
     const response = await fetch(
@@ -66,7 +66,7 @@ async function iconView(){
     const options = {
         method: "GET",
         headers: {
-            Authorization: `Bearer ${secrets.API_KEY}`, //${secrets.API_KEY}
+            Authorization: `Bearer patUZbjIH5L5eCO0M.db444e26deda63327d01fc6935a4c9684143302e300bf49447dbf8f9a5cc395d`, //${secrets.API_KEY}
         },
     };
     const response = await fetch(
