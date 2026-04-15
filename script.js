@@ -21,13 +21,13 @@ async function getAllRecords(){ //function for Event List
     data.records.forEach(record => {
         let fields = record.fields;
 
-        //html code for Event Card
+//-- HTML code for Event Card --
         let card = `
 <div class="cardEvent card d-flex" id="${record.id}">
     <div class="top-Card">  <!--Top Section-->
         <div class="eventName d-flex flex-row">
             <p>${fields["fldQyz4DI6To3rQlZ"]}</p>
-        </div>
+        </div> 
         <div class="imageType">
         <img src="${fields["fld2mASM3OlRq1LFD"]?.[0]?.url}" alt="Trading Card type of game ${fields["fldQyz4DI6To3rQlZ"]}">
         </div>
@@ -84,10 +84,10 @@ async function iconView(){
         let date = fields["fldXlmyk1BD64LcO3"];
 
 
-        //html code for List view icons + onClick
+    //-- HTML code for List view icons + onClick --
     if (photos && photos.length > 0){
         let cardList = `
-    <div class="cardList rounded m-2" onclick="openPopup('${record.id}')">
+    <div class="cardList rounded  m-2" onclick="openPopup('${record.id}')">
             <div class="imageIcon shadow-sm rounded">
                 <img src="${photos[0].url}" class="img-fluid img-thumbnail" alt="${name}" style="width: 300px; height: 300px; object-fit: cover;">
 
@@ -102,6 +102,7 @@ async function iconView(){
         }
     });
 }
+//-- Function for Pop-up Modal --
 function openPopup(eventID){
     const originalCard = document.getElementById(eventID);
     const modalBody = document.getElementById("modalBodyContent");
@@ -112,6 +113,6 @@ function openPopup(eventID){
         myModal.show();
     }
 }
-//Call on Functions
+//-- Call on Functions --
 getAllRecords();
 iconView();

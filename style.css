@@ -28,7 +28,7 @@ nav, .nav-link{
     text-decoration: none;
 }
 
-@media (max-width: 1000px){ /* Mobile View*/
+@media (max-width: 1000px){ /* Mobile View */
 .navbar-nav{
     padding: 0 !important;
 }
