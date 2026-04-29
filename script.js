@@ -1,28 +1,29 @@
 "use strict"; //Strict Mode
-//Note to self '' and `` are differnet 
+//Note to self '' and `` are differnet
 
-async function getAllRecords(){ //function for Event List
-    let container = document.getElementById("eventList");
+async function getAllRecords() {
+  //function for Event List
+  let container = document.getElementById("eventList");
 
-    const options = {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer patUZbjIH5L5eCO0M.db444e26deda63327d01fc6935a4c9684143302e300bf49447dbf8f9a5cc395d`, //${secrets.API_KEY}
-        },
-    };
-    const response = await fetch(
-        `https://api.airtable.com/v0/appx3kAqDzfrdw6NC/Respawn%20Point?returnFieldsByFieldId=true`,
-        options
-    );
-    const data = await response.json();
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer patUZbjIH5L5eCO0M.db444e26deda63327d01fc6935a4c9684143302e300bf49447dbf8f9a5cc395d`, //${secrets.API_KEY}
+    },
+  };
+  const response = await fetch(
+    `https://api.airtable.com/v0/appx3kAqDzfrdw6NC/Respawn%20Point?&view=DateTime`,
+    options,
+  );
+  const data = await response.json();
 
-    console.log(data); //see Airtable data
+  console.log(data); //see Airtable data
 
-    data.records.forEach(record => {
-        let fields = record.fields;
+  data.records.forEach((record) => {
+    let fields = record.fields;
 
-//-- HTML code for Event Card --
-        let card = `
+    //-- HTML code for Event Card --
+    let card = `
 <div class="cardEvent card d-flex" id="${record.id}">
     <div class="top-Card">  <!--Top Section-->
         <div class="eventName d-flex flex-row">
@@ -54,39 +55,39 @@ async function getAllRecords(){ //function for Event List
   </div>
 </div>
         `;
-        container.innerHTML += card;
-    });
+    container.innerHTML += card;
+  });
 }
 
 //getAllRecords();
 
-async function iconView(){
-    let container = document.getElementById("listView");
+async function iconView() {
+  let container = document.getElementById("listView");
 
-    const options = {
-        method: "GET",
-        headers: {
-            Authorization: `Bearer patUZbjIH5L5eCO0M.db444e26deda63327d01fc6935a4c9684143302e300bf49447dbf8f9a5cc395d`, //${secrets.API_KEY}
-        },
-    };
-    const response = await fetch(
-        `https://api.airtable.com/v0/appx3kAqDzfrdw6NC/Respawn%20Point?returnFieldsByFieldId=true&filterByFormula=NOT({fld2mASM3OlRq1LFD}%20=%20'')`, options
-    );
-    const data = await response.json();
+  const options = {
+    method: "GET",
+    headers: {
+      Authorization: `Bearer patUZbjIH5L5eCO0M.db444e26deda63327d01fc6935a4c9684143302e300bf49447dbf8f9a5cc395d`, //${secrets.API_KEY}
+    },
+  };
+  const response = await fetch(
+    `https://api.airtable.com/v0/appx3kAqDzfrdw6NC/Respawn%20Point?returnFieldsByFieldId=true&filterByFormula=NOT({fld2mASM3OlRq1LFD}%20=%20'')`,
+    options,
+  );
+  const data = await response.json();
 
-    console.log(data); //see Airtable data
+  console.log(data); //see Airtable data
 
-    data.records.forEach(record => {
-        let fields = record.fields;
-        let eventID = record.id;
-        let photos = fields["fldEwehoiY9W0QY9E"];
-        let name = fields["fldQyz4DI6To3rQlZ"];
-        let date = fields["fldXlmyk1BD64LcO3"];
-
+  data.records.forEach((record) => {
+    let fields = record.fields;
+    let eventID = record.id;
+    let photos = fields["fldEwehoiY9W0QY9E"];
+    let name = fields["fldQyz4DI6To3rQlZ"];
+    let date = fields["fldXlmyk1BD64LcO3"];
 
     //-- HTML code for List view icons + onClick --
-    if (photos && photos.length > 0){
-        let cardList = `
+    if (photos && photos.length > 0) {
+      let cardList = `
     <div class="cardList rounded  m-2" onclick="openPopup('${record.id}')">
             <div class="imageIcon shadow-sm rounded">
                 <img src="${photos[0].url}" class="img-fluid img-thumbnail" alt="${name}" style="width: 300px; height: 300px; object-fit: cover;">
@@ -98,20 +99,20 @@ async function iconView(){
             </div>
         </div>
         `;
-        container.innerHTML += cardList;
-        }
-    });
+      container.innerHTML += cardList;
+    }
+  });
 }
 //-- Function for Pop-up Modal --
-function openPopup(eventID){
-    const originalCard = document.getElementById(eventID);
-    const modalBody = document.getElementById("modalBodyContent");
+function openPopup(eventID) {
+  const originalCard = document.getElementById(eventID);
+  const modalBody = document.getElementById("modalBodyContent");
 
-    if(originalCard && modalBody){
-        modalBody.innerHTML = originalCard.outerHTML;
-        const myModal = new bootstrap.Modal(document.getElementById('eventModal'));
-        myModal.show();
-    }
+  if (originalCard && modalBody) {
+    modalBody.innerHTML = originalCard.outerHTML;
+    const myModal = new bootstrap.Modal(document.getElementById("eventModal"));
+    myModal.show();
+  }
 }
 //-- Call on Functions --
 getAllRecords();
