@@ -12,7 +12,7 @@ async function getAllRecords() {
     },
   };
   const response = await fetch(
-    `https://api.airtable.com/v0/appx3kAqDzfrdw6NC/Respawn%20Point?&view=DateTime`,
+    `https://api.airtable.com/v0/appx3kAqDzfrdw6NC/Respawn%20Point?returnFieldsByFieldId=true`,
     options,
   );
   const data = await response.json();
@@ -21,6 +21,9 @@ async function getAllRecords() {
 
   data.records.forEach((record) => {
     let fields = record.fields;
+
+    let formattedDate = fields["fldXlmyk1BD64LcO3"] ?
+    dayjs(fields["fldXlmyk1BD64LcO3"]).format('MMM DD, YYYY - h:mm A') : "Date TBD";
 
     //-- HTML code for Event Card --
     let card = `
@@ -37,7 +40,7 @@ async function getAllRecords() {
         <img class="text-center" src="${fields["fldEwehoiY9W0QY9E"]?.[0]?.url}" alt="${fields["fldQyz4DI6To3rQlZ"]}" width="300px">
     </div>
     <div class="eventDate">
-        <p>${fields["fldXlmyk1BD64LcO3"]}</p>
+        <p>${formattedDate}</p>
     </div>
     <div class="bottom-Card"> <!--Bottom Section-->
         <p class="location">${fields["fld1pwJCzozb4VoER"]}</p>
@@ -83,7 +86,8 @@ async function iconView() {
     let eventID = record.id;
     let photos = fields["fldEwehoiY9W0QY9E"];
     let name = fields["fldQyz4DI6To3rQlZ"];
-    let date = fields["fldXlmyk1BD64LcO3"];
+    let formattedDate = fields["fldXlmyk1BD64LcO3"] 
+        ? dayjs(fields["fldXlmyk1BD64LcO3"]).format('MMM D, YYYY - h:mm A') : "";
 
     //-- HTML code for List view icons + onClick --
     if (photos && photos.length > 0) {
@@ -94,7 +98,7 @@ async function iconView() {
 
                 <div class="nameOverlay text-center d-flex">
                     <span>${name}</span>
-                    <span style="font-size:11px; line-height: 40px;">${date}</span>
+                    <span style="font-size:11px; line-height: 40px;">${formattedDate}</span>
                 </div>
             </div>
         </div>

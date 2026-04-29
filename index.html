@@ -85,7 +85,7 @@
 <hr>
 <div class="container-fluid container">
     <h4>Event List</h4>
-<div class="listBackground container-fluid container" class="d-flex" id="eventList"> 
+<div class="listBackground d-flex justify-content-center" id="eventList"> 
   <!-- This goes in JavaScript!!!
   <div class="cardEvent card d-flex">
     <div class="top-Card"> 
@@ -120,31 +120,39 @@
 </div>
 </div>
 <footer>
-   <div class="container text-center text-md-start">
-        <div class="row text-center text-md-start">
-            <div class="col-md-2 col-lg-2 col-exl-2 mx-auto mb-2">
-                <h5>Explore</h5>
-                <ul>
-                    <li class="exploreList"><a class="exploreLink" href="#heroImage">Home</a></li>
-                    <li class="exploreList"><a class="exploreLink" href="#ourMission">Our Mission</a></li>
-                    <li class="exploreList"><a class="exploreLink" href="#upcomingEvents">Upcoming Events</a></li>
-                    <li class="exploreList"><a class="activeExplore  exploreLink" href="#eventList">Event List</a></li>
-                </ul>
-            </div>
-            <div class="col-md-2 col-lg-2 col-exl-2 mx-auto mb-2">
-                <img src="Footer-Dice.png" width="100px" alt="Different dice in colors blue, yellow and purple">
-                <p id="copyright" class="text-center">&copy; 2026 Amber Yaxcal. All rights reserved.</p>
-            </div>
+  <div class="container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      <div class="col-md-2 col-lg-2 col-exl-2 mx-auto mb-2">
+        <h5>Explore</h5>
+        <ul>
+        <li class="exploreList"><a class="exploreLink" href="#heroImage">Home</a></li>
+        <li class="exploreList"><a class="exploreLink" href="#ourMission">Our Mission</a></li>
+        <li class="exploreList"><a class="exploreLink" href="#upcomingEvents">Upcoming Events</a></li>
+        <li class="exploreList"><a class="activeExplore  exploreLink" href="#eventList">Event List</a></li>
+      </ul>
+      </div>
+    <div class="col-md-2 col-lg-2 col-exl-2 mx-auto mb-2">
+      <img src="Footer-Dice.png" width="100px" alt="Different dice in colors blue, yellow and purple">
+      <p id="copyright" class="text-center">&copy; 2026 Amber Yaxcal. All rights reserved.</p>
+    </div>
+  </div>
+</div>
 </footer>
+
  <!--PopUp Screen for the Detail View-->
 <div class="modal fade" id="eventModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content" id="modalBodyContent" style="background:transparent; border:none;">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background:transparent; border:none;">
+      
+      <div class="modal-body" id="modalBodyContent">
+      </div>
+  
     </div>
   </div>
 </div>
 
     <!--JavaScript Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
